@@ -12,6 +12,13 @@ function App() {
     setGreetMsg(await invoke("greet", { name }));
   }
 
+  async function addNumbers() {
+    const total = await invoke("add_numbers", { a: 5, b: 7 });
+    console.log("Total:", total);
+  }
+
+  addNumbers();
+
   return (
     <main className="container">
       <h1>Welcome to Tauri + React</h1>
