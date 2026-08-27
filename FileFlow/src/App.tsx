@@ -17,7 +17,18 @@ function App() {
     console.log("Total:", total);
   }
 
+  async function testParameters() {
+    const darkModeMessage = await invoke("set_dark_mode", { enabled: true });
+    console.log(darkModeMessage);
+
+    const fileCount = await invoke("count_files", {
+      fileNames: ["report.csv", "invoice.csv", "summary.csv"],
+    });
+    console.log("File count:", fileCount);
+  }
+
   addNumbers();
+  testParameters();
 
   return (
     <main className="container">
